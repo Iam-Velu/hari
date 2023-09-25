@@ -1,0 +1,16 @@
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator. 
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
