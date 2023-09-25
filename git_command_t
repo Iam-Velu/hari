@@ -1,0 +1,73 @@
+  501  git status
+  502  git init
+  503  git status
+  504  git config --list
+  505  git config --global --unset user.name
+  506  git config --list
+  507  git config --global --unset user.email
+  508  git config --list
+  509  git config --global --unset safe.directory
+  510  git config --list
+  511  git config --global --unset gui.recentrepo
+  512  git config --list
+  513  touch file1
+  514  git status
+  515  git add file1
+  516  git status
+  517  git rm --cached file1
+  518  git status
+  519  git add file1
+  520  git status
+  521  git commit -m "1st commit_test"
+  522  git config --global user.email "you_V@example.com"
+  523  git config --global user.name "You_V"
+  524  git config --list
+  525  git commit -m "1st commit_test"
+  526  git log
+  527  git branch
+  528  git branch dev
+  529  git branch
+  530  git checkout -b prod
+  531  git branch
+  532  git checkout master
+  533  git branch
+  534  git checkout prod
+  535  git branch
+  536  git log
+  537  touch file2
+  538  git add file2
+  539  git commit -m "2nd commit_prod"
+  540  git log
+  541  git checkout master
+  542  git log
+  543  git merge prod
+  544  git log
+  545  git branch
+  546  git remote add origin https://github.com/Iam-Velu/hari.git
+  547  git push -u origin master
+  548  cd ..
+  549  ls
+  550  git status
+  551  mkdir hari
+  552  cd hari/
+  553  git init
+  554  git clone https://github.com/Iam-Velu/hari.git
+  555  ls
+  556  cd hari/
+  557  ls
+  558  cd ..
+  559  cd ..
+  560  rm -rf hari
+  561  mkdir sree
+  562  cd sree/
+  563  git clone https://github.com/Iam-Velu/hari.git
+  564  ls
+  565  cd hari/
+  566  ls
+  567  touch file3
+  568  git add file3
+  569  git commit -m "3nd commit_clone"
+  570  git push -u origin master
+  571  git status
+  572  git log
+  573  history
