@@ -2,3 +2,14 @@ https://meet.google.com/ofj-ovsm-gye
 
 server couch-h12 172.14.1.32:5984 check
 server couch-h11 172.14.1.31:5984 check backup
+
+
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~
