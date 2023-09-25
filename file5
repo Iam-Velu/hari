@@ -1,0 +1,4 @@
+https://meet.google.com/ofj-ovsm-gye
+
+server couch-h12 172.14.1.32:5984 check
+server couch-h11 172.14.1.31:5984 check backup
