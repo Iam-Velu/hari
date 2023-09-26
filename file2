@@ -1,0 +1,2560 @@
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/git (master)
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/git (master)
+$ git config -l
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=you_V@example.com
+user.name=You_V
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/Iam-Velu/hari.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/git (master)
+$ cd ../sree/hari/
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 1), reused 2 (delta 1), pack-reused 0
+Unpacking objects: 100% (5/5), 1.42 KiB | 4.00 KiB/s, done.
+From https://github.com/Iam-Velu/hari
+   00ff4ea..741d83b  master     -> origin/master
+Updating 00ff4ea..741d83b
+Fast-forward
+ file4         |  0
+ git_command_t | 73 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 73 insertions(+)
+ create mode 100644 file4
+ create mode 100644 git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 741d83b8416504010b4f24654820859a90a2ab5e (HEAD -> master, origin/master, origin/HEAD)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git branch
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git branch dev
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git branch
+  dev
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ git log
+commit 741d83b8416504010b4f24654820859a90a2ab5e (HEAD -> dev, origin/master, origin/HEAD, master)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ vim file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ git push origin master
+Everything up-to-date
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ git add .
+warning: in the working copy of 'file4', LF will be replaced by CRLF the next time Git touches it
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ git log
+commit 741d83b8416504010b4f24654820859a90a2ab5e (HEAD -> dev, origin/master, origin/HEAD, master)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ git branch
+* dev
+  master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (dev)
+$ git checkout master
+Switched to branch 'master'
+M       file4
+Your branch is up to date with 'origin/master'.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 741d83b8416504010b4f24654820859a90a2ab5e (HEAD -> master, origin/master, origin/HEAD, dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git commit -m "add some details"
+[master 70fec33] add some details
+ 1 file changed, 16 insertions(+)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 709 bytes | 709.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Iam-Velu/hari.git
+   741d83b..70fec33  master -> master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873 (HEAD -> master, origin/master, origin/HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ vim file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git add file4
+warning: in the working copy of 'file4', LF will be replaced by CRLF the next time Git touches it
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873 (HEAD -> master, origin/master, origin/HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file4
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git commit -m "testing mistack"
+[master 92145bd] testing mistack
+ 1 file changed, 31 insertions(+)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 310 bytes | 310.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Iam-Velu/hari.git
+   70fec33..92145bd  master -> master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 92145bd3306641a202807a8ecad1ab2bd01dc8e9 (HEAD -> master, origin/master, origin/HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:23:13 2023 +0530
+
+    testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git checkout 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Note: switching to '70fec33d2b6defcd94f23a9077b660c4bbeca873'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 70fec33 add some details
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((70fec33...))
+$ git log
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873 (HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((70fec33...))
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((70fec33...))
+$ vim file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((70fec33...))
+$ git a
+add        am         apply      archive    askpass    askyesno
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((70fec33...))
+$ git add file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((70fec33...))
+$ git commit -m "2nd testing mistack"
+[detached HEAD 40c477a] 2nd testing mistack
+ 1 file changed, 10 insertions(+)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((40c477a...))
+$ git log
+commit 40c477acf3bc9eb84e0da7c07cfbe5fb02295037 (HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:27:26 2023 +0530
+
+    2nd testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((40c477a...))
+$ git push origin master
+Everything up-to-date
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((40c477a...))
+$ git branch
+* (HEAD detached from 70fec33)
+  dev
+  master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((40c477a...))
+$ git status
+HEAD detached from 70fec33
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((40c477a...))
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari ((40c477a...))
+$ git checkout master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  40c477a 2nd testing mistack
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 40c477a
+
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+
+1
+1
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+1
+1
+11
+
+1mistacks1
+11
+1
+11
+11
+
+
+
+
+
+
+
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 92145bd3306641a202807a8ecad1ab2bd01dc8e9 (HEAD -> master, origin/master, origin/HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:23:13 2023 +0530
+
+    testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reset --hard 70fec33d2b6defcd94f23a9077b660c4bbeca873
+HEAD is now at 70fec33 add some details
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873 (HEAD -> master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reflog
+70fec33 (HEAD -> master) HEAD@{0}: reset: moving to 70fec33d2b6defcd94f23a9077b660c4bbeca873
+92145bd (origin/master, origin/HEAD) HEAD@{1}: checkout: moving from 40c477acf3bc9eb84e0da7c07cfbe5fb02295037 to master
+40c477a HEAD@{2}: commit: 2nd testing mistack
+70fec33 (HEAD -> master) HEAD@{3}: checkout: moving from master to 70fec33d2b6defcd94f23a9077b660c4bbeca873
+92145bd (origin/master, origin/HEAD) HEAD@{4}: commit: testing mistack
+70fec33 (HEAD -> master) HEAD@{5}: commit: add some details
+741d83b (dev) HEAD@{6}: checkout: moving from dev to master
+741d83b (dev) HEAD@{7}: checkout: moving from master to dev
+741d83b (dev) HEAD@{8}: pull: Fast-forward
+00ff4ea HEAD@{9}: commit: 3nd commit_clone
+b506c22 HEAD@{10}: clone: from https://github.com/Iam-Velu/hari.git
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reset --hard 40c477a
+HEAD is now at 40c477a 2nd testing mistack
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+3
+4
+5
+6
+7
+
+8
+9
+0
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 40c477acf3bc9eb84e0da7c07cfbe5fb02295037 (HEAD -> master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:27:26 2023 +0530
+
+    2nd testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+40c477a (HEAD -> master) 2nd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git pull
+Auto-merging file4
+CONFLICT (content): Merge conflict in file4
+Automatic merge failed; fix conflicts and then commit the result.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git branch
+  dev
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git log
+commit 40c477acf3bc9eb84e0da7c07cfbe5fb02295037 (HEAD -> master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:27:26 2023 +0530
+
+    2nd testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git checkout dev
+error: you need to resolve your current index first
+file4: needs merge
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+<<<<<<< HEAD
+3
+4
+5
+6
+7
+
+8
+9
+0
+=======
+
+1
+1
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+1
+1
+11
+
+1mistacks1
+11
+1
+11
+11
+
+
+
+
+
+
+
+
+>>>>>>> 92145bd3306641a202807a8ecad1ab2bd01dc8e9
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   file4
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git add file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|MERGING)
+$ git commit -m "3nd commit for mistacks"
+[master bf22f05] 3nd commit for mistacks
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 671 bytes | 223.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/Iam-Velu/hari.git
+   92145bd..bf22f05  master -> master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+bf22f05 (HEAD -> master, origin/master, origin/HEAD) 3nd commit for mistacks
+40c477a 2nd testing mistack
+92145bd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reset --hard 70fec33
+HEAD is now at 70fec33 add some details
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git add file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git commit -m "4th commit mistacks"
+On branch master
+Your branch is behind 'origin/master' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873 (HEAD -> master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+commit d1b9539fbe534a090266dc14713c8557c2824464
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:21:53 2023 +0530
+
+    1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+70fec33 (HEAD -> master) add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git branch
+  dev
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git pull
+Updating 70fec33..bf22f05
+Fast-forward
+ file4 | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+<<<<<<< HEAD
+3
+4
+5
+6
+7
+
+8
+9
+0
+=======
+
+1
+1
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+1
+1
+11
+
+1mistacks1
+11
+1
+11
+11
+
+
+
+
+
+
+
+
+>>>>>>> 92145bd3306641a202807a8ecad1ab2bd01dc8e9
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit bf22f05201238dcd54ed3ce73ae9910dd0ee3d13 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 40c477a 92145bd
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:41:17 2023 +0530
+
+    3nd commit for mistacks
+
+commit 40c477acf3bc9eb84e0da7c07cfbe5fb02295037
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:27:26 2023 +0530
+
+    2nd testing mistack
+
+commit 92145bd3306641a202807a8ecad1ab2bd01dc8e9
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:23:13 2023 +0530
+
+    testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reset --hard 70fec33d2b6defcd94f23a9077b660c4bbeca873
+HEAD is now at 70fec33 add some details
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git rebase
+Successfully rebased and updated refs/heads/master.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+Everything up-to-date
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+<<<<<<< HEAD
+3
+4
+5
+6
+7
+
+8
+9
+0
+=======
+
+1
+1
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+1
+1
+11
+
+1mistacks1
+11
+1
+11
+11
+
+
+
+
+
+
+
+
+>>>>>>> 92145bd3306641a202807a8ecad1ab2bd01dc8e9
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+bf22f05 (HEAD -> master, origin/master, origin/HEAD) 3nd commit for mistacks
+40c477a 2nd testing mistack
+92145bd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reset --hard 70fec33
+HEAD is now at 70fec33 add some details
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git rebase
+Successfully rebased and updated refs/heads/master.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+bf22f05 (HEAD -> master, origin/master, origin/HEAD) 3nd commit for mistacks
+40c477a 2nd testing mistack
+92145bd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git reset --hard 70fec33
+HEAD is now at 70fec33 add some details
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+70fec33 (HEAD -> master) add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git push --help
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git pull
+Updating 70fec33..bf22f05
+Fast-forward
+ file4 | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log
+commit bf22f05201238dcd54ed3ce73ae9910dd0ee3d13 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 40c477a 92145bd
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:41:17 2023 +0530
+
+    3nd commit for mistacks
+
+commit 40c477acf3bc9eb84e0da7c07cfbe5fb02295037
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:27:26 2023 +0530
+
+    2nd testing mistack
+
+commit 92145bd3306641a202807a8ecad1ab2bd01dc8e9
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:23:13 2023 +0530
+
+    testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git log --oneline
+bf22f05 (HEAD -> master, origin/master, origin/HEAD) 3nd commit for mistacks
+40c477a 2nd testing mistack
+92145bd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master)
+$ git rebase 70fec33
+Auto-merging file4
+CONFLICT (content): Merge conflict in file4
+error: could not apply 92145bd... testing mistack
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 92145bd... testing mistack
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git log --oneline
+40c477a (HEAD) 2nd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git status
+interactive rebase in progress; onto 70fec33
+Last commands done (2 commands done):
+   pick 40c477a 2nd testing mistack
+   pick 92145bd testing mistack
+No commands remaining.
+You are currently rebasing branch 'master' on '70fec33'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   file4
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git rebase --continue
+file4: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git log --oneline
+40c477a (HEAD) 2nd testing mistack
+70fec33 add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git push origin master
+Everything up-to-date
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+<<<<<<< HEAD
+3
+4
+5
+6
+7
+
+8
+9
+0
+=======
+
+1
+1
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+1
+1
+11
+
+1mistacks1
+11
+1
+11
+11
+
+
+
+
+
+
+
+
+>>>>>>> 92145bd (testing mistack)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ vim file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git status
+interactive rebase in progress; onto 70fec33
+Last commands done (2 commands done):
+   pick 40c477a 2nd testing mistack
+   pick 92145bd testing mistack
+No commands remaining.
+You are currently rebasing branch 'master' on '70fec33'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   file4
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git add file4
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git log
+commit 40c477acf3bc9eb84e0da7c07cfbe5fb02295037 (HEAD)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 12:27:26 2023 +0530
+
+    2nd testing mistack
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git status
+interactive rebase in progress; onto 70fec33
+Last commands done (2 commands done):
+   pick 40c477a 2nd testing mistack
+   pick 92145bd testing mistack
+No commands remaining.
+You are currently rebasing branch 'master' on '70fec33'.
+  (all conflicts fixed: run "git rebase --continue")
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file4
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout -b master 70fec33d2b6defcd94f23a9077b660c4bbeca873
+fatal: a branch named 'master' already exists
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout -b hari 70fec33d2b6defcd94f23a9077b660c4bbeca873
+error: Your local changes to the following files would be overwritten by checkout:
+        file4
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git stash
+Saved working directory and index state WIP on (no branch): 40c477a 2nd testing mistack
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout -b hari 70fec33d2b6defcd94f23a9077b660c4bbeca873
+Previous HEAD position was 40c477a 2nd testing mistack
+Switched to a new branch 'hari'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout hari
+Already on 'hari'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch
+  dev
+* hari
+  master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git log --oneline
+70fec33 (HEAD -> hari) add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ cat file4
+1.To change a private repository to a public one on GitHub, follow these steps:
+
+Log in to your GitHub account.
+Navigate to the repository you want to change from private to public.
+Inside the repository, click on the "Settings" tab, usually located towards the right-hand side of the repository's menu bar.
+Scroll down to the "Danger Zone" section at the bottom of the Settings page.
+In the "Danger Zone" section, you will find an option labeled "Change repository visibility." Click on it.
+
+2.How to add mail id to pull the code to git:
+
+Log in to your GitHub account.
+Navigate to the repository-select the repository to which you want to add a collaborator.
+Confirm access to edit-If you have the required permissions, proceed to the next step.
+Inside the repository, locate the "Settings" tab, usually located towards the right-hand side of the repository's menu bar. Click on it.
+In the left-hand menu, you'll find a section called "Collaborators & teams." Click on it.
+Add pepole-you want to add as a collaborator. Type in their email address or username.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git push origin hari
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'hari' on GitHub by visiting:
+remote:      https://github.com/Iam-Velu/hari/pull/new/hari
+remote:
+To https://github.com/Iam-Velu/hari.git
+ * [new branch]      hari -> hari
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch
+  dev
+* hari
+  master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch -M main
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch
+  dev
+  hari
+* main
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout hari
+Switched to branch 'hari'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch
+  dev
+* hari
+  main
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout -b master
+Switched to a new branch 'master'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git log --oneline
+70fec33 (HEAD -> master, origin/hari, hari) add some details
+741d83b (dev) Create git_command
+8cb523f 4th commit from sreehari
+00ff4ea 3nd commit_clone
+b506c22 2nd commit_prod
+d1b9539 1st commit_test
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git push origin master
+To https://github.com/Iam-Velu/hari.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Iam-Velu/hari.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git push -f origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Iam-Velu/hari.git
+ + bf22f05...70fec33 master -> master (forced update)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git push origin master
+Everything up-to-date
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git pull origin master
+From https://github.com/Iam-Velu/hari
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$  git branch --set-upstream-to=origin/master
+branch 'master' set up to track 'origin/master'.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git pull
+Already up to date.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ ls
+file1  file2  file3  file4  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ touch file5
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ vim file5
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git add file5
+warning: in the working copy of 'file5', LF will be replaced by CRLF the next time Git touches it
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git commit -m "new file added"
+[master ee53e38] new file added
+ 1 file changed, 4 insertions(+)
+ create mode 100644 file5
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git log
+commit ee53e38f845931031f5a28bc94e47e74ee420913 (HEAD -> master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 17:21:01 2023 +0530
+
+    new file added
+
+commit 70fec33d2b6defcd94f23a9077b660c4bbeca873 (origin/master, origin/hari, origin/HEAD, hari)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 08:49:38 2023 +0530
+
+    add some details
+
+commit 741d83b8416504010b4f24654820859a90a2ab5e (dev)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 08:22:53 2023 +0530
+
+    Create git_command
+
+    working commands in git for reference.
+
+commit 8cb523ff5bb730f7db7918edd1ae42ba125cffac
+Author: sree <rupinenisrihari1@gmail.com>
+Date:   Fri Sep 22 17:50:55 2023 +0530
+
+    4th commit from sreehari
+
+commit 00ff4ea457013d1178f7840b9d1ff2cfe20dbb1b
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 17:28:16 2023 +0530
+
+    3nd commit_clone
+
+commit b506c221674907f756ed4e6599310956134ae9e5
+Author: You_V <you_V@example.com>
+Date:   Fri Sep 22 13:37:55 2023 +0530
+
+    2nd commit_prod
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 349 bytes | 349.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Iam-Velu/hari.git
+   70fec33..ee53e38  master -> master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch
+  dev
+  hari
+  main
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ ls
+file1  file2  file3  file4  file5  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git fetch https://github.com/Iam-Velu/hari.git
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 1005 bytes | 8.00 KiB/s, done.
+From https://github.com/Iam-Velu/hari
+ * branch            HEAD       -> FETCH_HEAD
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ cat file5
+https://meet.google.com/ofj-ovsm-gye
+
+server couch-h12 172.14.1.32:5984 check
+server couch-h11 172.14.1.31:5984 check backup
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch
+  dev
+  hari
+  main
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch -a
+  dev
+  hari
+  main
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/hari
+  remotes/origin/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git merge remotes/origin/HEAD
+Already up to date.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ ls
+file1  file2  file3  file4  file5  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ cat file5
+https://meet.google.com/ofj-ovsm-gye
+
+server couch-h12 172.14.1.32:5984 check
+server couch-h11 172.14.1.31:5984 check backup
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git merge remotes/origin/master
+Already up to date.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ cat file5
+https://meet.google.com/ofj-ovsm-gye
+
+server couch-h12 172.14.1.32:5984 check
+server couch-h11 172.14.1.31:5984 check backup
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git checkout remotes/origin/HEAD
+Note: switching to 'remotes/origin/HEAD'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ee53e38 new file added
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch -a
+* (no branch, rebasing master)
+  dev
+  hari
+  main
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/hari
+  remotes/origin/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ git branch -d remotes/origin/master
+error: branch 'remotes/origin/master' not found.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ ls
+file1  file2  file3  file4  file5  git_command_t
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/hari (master|REBASE 2/2)
+$ cd ..
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree
+$ ls
+hari/
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree
+$ mkdir rb
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree
+$ cd rb/
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb
+$ git init
+Initialized empty Git repository in C:/Users/Velu V/Desktop/sree/rb/.git/
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git fetch https://github.com/Iam-Velu/hari.git
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 21 (delta 7), reused 11 (delta 2), pack-reused 0
+Unpacking objects: 100% (21/21), 3.71 KiB | 4.00 KiB/s, done.
+From https://github.com/Iam-Velu/hari
+ * branch            HEAD       -> FETCH_HEAD
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ ls
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch -a
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ ls
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ ll
+total 0
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ touch testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git add testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git commit -m "1st commit testfile"
+[master (root-commit) 3134a09] 1st commit testfile
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git log --oneline
+3134a09 (HEAD -> master) 1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch -a
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git fetch https://github.com/Iam-Velu/hari.git
+From https://github.com/Iam-Velu/hari
+ * branch            HEAD       -> FETCH_HEAD
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ ls
+testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch -a
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git push
+.git/      testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git push
+.git/      testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git push orgin master
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git remote add origin https://github.com/Iam-Velu/rb1.git
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 213 bytes | 106.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Iam-Velu/rb1.git
+ * [new branch]      master -> master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ ls
+testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git fetch https://github.com/Iam-Velu/rb1.git
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 692 bytes | 2.00 KiB/s, done.
+From https://github.com/Iam-Velu/rb1
+ * branch            HEAD       -> FETCH_HEAD
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ cat testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git checkout remotes/origin/master
+Note: switching to 'remotes/origin/master'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3134a09 1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ ls
+testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ cat testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ git branch
+* (HEAD detached at origin/master)
+  master
+l
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ ls
+testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ git log
+commit 3134a09e6ffd9a9bb0e709edf9b649bc31456b92 (HEAD, origin/master, master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 17:39:21 2023 +0530
+
+    1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ git fetch
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.29 KiB | 11.00 KiB/s, done.
+From https://github.com/Iam-Velu/rb1
+   3134a09..af32494  master     -> origin/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ ls
+testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ git branch -a
+* (HEAD detached at 3134a09)
+  master
+  remotes/origin/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ git log
+commit 3134a09e6ffd9a9bb0e709edf9b649bc31456b92 (HEAD, master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 17:39:21 2023 +0530
+
+    1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((3134a09...))
+$ git checkout remotes/origin/master
+Previous HEAD position was 3134a09 1st commit testfile
+HEAD is now at af32494 2nd commit testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((af32494...))
+$ git log
+commit af32494f2ced69438e30095fefe7ec262b3e38ca (HEAD, origin/master)
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 17:48:10 2023 +0530
+
+    2nd commit testfile1
+
+    2nd commit testfile2
+
+commit ee83716554b6bb095792058d13427333a4d63bad
+Author: Velu V <130644256+Iam-Velu@users.noreply.github.com>
+Date:   Mon Sep 25 17:44:13 2023 +0530
+
+    Update testfile1
+
+commit 3134a09e6ffd9a9bb0e709edf9b649bc31456b92 (master)
+Author: You_V <you_V@example.com>
+Date:   Mon Sep 25 17:39:21 2023 +0530
+
+    1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((af32494...))
+$ cat testfile1
+
+git remote add origin https://github.com/Iam-Velu/rb1.git
+
+https://github.com/Iam-Velu/hari.git
+
+remotes/origin/HEAD
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb ((af32494...))
+$ git checkout master
+Previous HEAD position was af32494 2nd commit testfile1
+Switched to branch 'master'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git merge remotes/origin/master
+Updating 3134a09..af32494
+Fast-forward
+ testfile1 | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ cat testfile1
+
+git remote add origin https://github.com/Iam-Velu/rb1.git
+
+https://github.com/Iam-Velu/hari.git
+
+remotes/origin/HEAD
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch dev
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git log --oneline
+af32494 (HEAD -> dev, origin/master, master) 2nd commit testfile1
+ee83716 Update testfile1
+3134a09 1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ touch s1 s2 s3
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ ls
+s1  s2  s3  testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git add s1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git commit -m "s1 commited"
+[dev 2d7212c] s1 commited
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 s1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git add s2
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git commit -m "s2 commited"
+[dev 06d487f] s2 commited
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 s2
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git add s3
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git commit -m "s3 commited"
+[dev 5a78e93] s3 commited
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 s3
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git log --oneline
+5a78e93 (HEAD -> dev) s3 commited
+06d487f s2 commited
+2d7212c s1 commited
+af32494 (origin/master, master) 2nd commit testfile1
+ee83716 Update testfile1
+3134a09 1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (dev)
+$ git checkout master
+Switched to branch 'master'
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git branch
+  dev
+* master
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git cherry
+cherry        cherry-pick
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git log --oneline
+af32494 (HEAD -> master, origin/master) 2nd commit testfile1
+ee83716 Update testfile1
+3134a09 1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git cherry-pick 06d487f
+[master a6467dd] s2 commited
+ Date: Mon Sep 25 17:55:16 2023 +0530
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 s2
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git log --oneline
+a6467dd (HEAD -> master) s2 commited
+af32494 (origin/master) 2nd commit testfile1
+ee83716 Update testfile1
+3134a09 1st commit testfile
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ touch z1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git add z1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   z1
+
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git stash
+Saved working directory and index state WIP on master: a6467dd s2 commited
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ ls
+s2  testfile1
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git stash p
+pop    push
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   z1
+
+Dropped refs/stash@{0} (0a5d726904e83594bb437ee7b99901ee8fa8e5c3)
+
+Velu V@DESKTOP-N32HIDN MINGW64 ~/Desktop/sree/rb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   z1
+
+
