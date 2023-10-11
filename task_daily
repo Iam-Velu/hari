@@ -1,0 +1,259 @@
+Saraafapp portal1:
+----------------------------
+https://sarrafapp.com/login
+user: admin
+password: admin
+OTP:  4429252
+Click on settings --🡪 click on CURRENCIES 
+
+support page:
+--------------------------
+http://support.sarrafapp.com:3002/action
+32159
+	 
+
+Saraafapp portal2:
+----------------------------
+https://mint.sarrafapp.com/
+admin@sarrafapp.com
+12345678
+Click on settings --🡪 click on CURRENCIES ---> Edit and update.
+
+=================================================
+
+ connect-livehb9
+ cd /root/sarrafrates
+./rates.sh
+ echo "" > file1.txt
+
+
+
+==============================================================================================
+
+1) Restarting components 
+(i.e Clientedge, Billingsystem, Outboundgateway For Vimo )
+2) Run ansible dead calls script
+3) Scheduler
+3) Check Clusteradmin
+4) Check all Nagios
+5) Check Backups coming or not
+6) Monitor Call status
+
+1....Restarting components###########################################################################################
+ClientEdge->
+connect server
+goto clientedge /clientedge2
+/opt/vimoservices status
+/opt/vimoservices restart
+
+
+BillingSystem->
+connect server
+goto billingsystem
+/opt/vimoservices status
+/opt/vimoservices restart
+
+
+Outboundgateway Restart procedure->
+connect server 
+docker ps
+goto outboundgateway
+/opt/vimoservices status
+/usr/local/freeswitch/bin/fs_cli
+shutdown
+shutdown
+ps -aux
+/opt/vimoservices start
+ps -aux
+
+2.....###############################################################################################
+
+connect-liveh7
+goto ansible
+/opt/vimoservices 
+yes
+copy and paste the data,  
+It should be in this format 
+( example :ansible -m shell -a 'docker exec vimoswitch /usr/local/freeswitch/bin/fs_cli -x "uuid_kill 2f1f1b71-483d-48e3-9f5d-e50c9bb624c6"' h12 )
+
+3....################################################################################################
+Scheduler:
+
+1.clearPackages
+2.move to expired
+3.expired to dormant  7  days  note:Iran only 10 days
+4.dormant to avaiable   1 day 
+5.Reserved to available 1 Hour
+6.48 HRS incoming check
+7.verfication failed to dormant 7 days
+8.send did notfication
+
+###################################################################################################
+
+
+Vimo adminpanel----http://172.14.1.137:8881/
+Tcell adminpanel---http://10.0.1.13:8881/
+Roshan adminpanel---http://10.2.1.3:8881/
+
+
+4..################################################################################################
+
+username : nagiosadmin
+password : asdf@123-d!d
+
+Vimo Nagios---->http://172.14.3.3/nagios/
+Tcell Nagios--->http://10.0.1.2/nagios/
+Roshan Nagios-->http://10.2.1.5/nagios/
+mynu nagios---->http://172.16.1.131/nagios/
+yooopi nagios-->http://10.3.1.7/nagios/
+ 
+###########################################################
+
+Cluster Admin:
+
+http://172.14.3.117/
+
+DB login 
+http://172.14.1.11:5984/_utils/#
+ user : admin
+ password : root
+
+###############################################################
+
+logs:
+tail -100f /home/vimo/contlogs/statistics.log
+tail -100f /home/vimo/contlogs/billingsystem.log
+tail -100f /home/vimo/contlogs/adminpanal.log
+tail -100f /home/vimo/contlogs/vimoswitch.log
+tail -100f /home/vimo/contlogs/clientedge.log
+tail -100f /home/vimo/contlogs/billingsystem.log
+
+###########################################
+Gluster log remove:
+go to log path: /var/log/glusterfs/
+echo "" > etc-glusterfs-glusterd.vol.log
+
+#######################################################
+
+https://data.vimolive.com:8882/
+admin
+85321478
+
+verify the DID EXT Stock in AF--> Available 
+
+#####################################################################################################
+
+thank you for the report. We would like to change the intervals for the reports to: 
+ 
+1.	Weekly
+2.	Every two-weeks (01 – 15 of the month and 16 – 30/31 of the month)
+3.	Monthly 
+ 
+For the weekly report we need:
+4.	ding/ezedealer
+5.	T-mobile. 
+ 
+For the every-two-weeks (time period: 01 – 15 of the month and 16 – 30/31 of the month) report we need:
+6.	Speedflow
+7.	Universal Call 
+ 
+For the monthly report we need:
+8.	42one 
+9.	Roshan
+10.	TTM Telekom 
+ 
+Please send us those reports automatically.
+
+#########################################################################################################
+
+
+docker run -id --net=host -v /home/vimo:/home/vimo --restart=always --name=sarraf-v2 vimoregistry.vimolive.com:5000/billing:06052020
+
+#######################################################################################################
+
+
+extend these vouchers: 
+extend these vouchers: 
+136216085901
+136216085900
+
+step-1--> goto support page and verify the vouchers
+step-2--> check the url in H2-http://172.14.1.11:5984/_utils/#database/vouchers/_all_docs
+step-3--> goto https://www.epochconverter.com/ for update the time next 1 year.
+step-4--> Take the next one year timestamp and update to that user.
+
+
+##############################################################
+Note:
+Dont use ls & ll commends in HB5 >> Vimoproxy
+
+
+#############################################################
+Roshan SMS and Otp checking
+
+check in sms gateway logs
+check with 93 and without 93 as well
+cd /home/dcom/contlogs/smsgateway/roshan-hb2_sms/
+cat 2022-12-26.log | grep "93727980321"
+
+
+
+you can get user id from couchdb >> numbebrmapping table
+
+check in authorizations now, for this user
+http://88.198.202.166:5984/_utils/#database/numbermapping/93727980321
+
+7ed814f797a157cab4b3604caf92ca9a
+this is the user id
+grep number as well as user id
+
+
+###############################################################################
+
+@team- If u see like this type of issue
+Check the nagios service status
+If nagios service failed means, We have to start the service
+#systemctl status nagios-nrpe-server
+#systemctl restart nagios-nrpe-server
+#systemctl status nagios-nrpe-server
+
+##################################################################################
+port open:
+netstat -lntpu | grep 8080
+iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+iptables -A FORWARD -p tcp -m tcp --dport 8080 -j ACCEPT
+iptables-save
+iptables-save > /etc/iptables.rules
+
+#service iprules save
+#service iprules restore
+#iptables -L -v
+
+iptables -A INPUT -p tcp -m tcp --dport 8000 -j ACCEPT
+iptables -A FORWARD -p tcp -m tcp --dport 8000 -j ACCEPT
+iptables-save
+iptables-save > /etc/iptables.rules
+
+https://portchecker.io/
+
+##################################################################################
+h1- etcd start:
+
+nohup etcd -snapshot-count=0 -proxy-refresh-interval 20000 -name node1 -initial-advertise-peer-urls  http://172.14.1.10:2380 -listen-peer-urls  http://172.14.1.10:2380 -listen-client-urls http://172.14.1.10:4001,http://127.0.0.1:4001 -advertise-client-urls http://172.14.1.10:4001 -initial-cluster-token clientdht1 -initial-cluster node1=http://172.14.1.10:2380,node2=http://172.14.1.12:2380,node3=http://172.14.3.10:2380 -initial-cluster-state existing &
+
+##########################################################################################
+sudo growpart /dev/nvme0n1 1
+resize2fs /dev/nvme0n1p1
+
+
+apt install cloud-utils
+ growpart /dev/sda 1
+resize2fs /dev/sda1
+###############################################################
+
+iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+iptables -A FORWARD -p tcp -m tcp --dport 443 -j ACCEPT
+
+
+
+
